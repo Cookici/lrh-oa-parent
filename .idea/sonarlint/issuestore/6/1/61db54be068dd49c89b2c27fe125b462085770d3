@@ -1,0 +1,17 @@
+
+{
+java:S1488,"`Immediately return this expression instead of assigning it to the temporary variable "adminApi".(Àğö¶ûÿÿÿÿ
+H
+java:S1135"2Complete the task associated to this TODO comment.(Üğ£Å
+G
+java:S1874 "1Remove this use of "Parameter"; it is deprecated.(ïŞŸÌ
+M
+java:S1874!"8Remove this use of "ParameterBuilder"; it is deprecated.(èá
+M
+java:S1874!"8Remove this use of "ParameterBuilder"; it is deprecated.(èá
+F
+java:S1874%"0Remove this use of "ModelRef"; it is deprecated.(…¤
+K
+java:S1874&"5Remove this use of "parameterType"; it is deprecated.(çú×
+W
+java:S18744"ARemove this use of "globalOperationParameters"; it is deprecated.(ºìŠ¹

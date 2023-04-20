@@ -1,0 +1,18 @@
+server:
+  port: 8800
+
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    url: jdbc:mysql://localhost:3306/lrh-oa?serverTimezone=GMT%2B8&userSSL-false&characterEncoding=utf-8
+    password: lrh,903.520hhhh
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl   #????
