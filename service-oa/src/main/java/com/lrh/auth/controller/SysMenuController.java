@@ -60,11 +60,11 @@ public class SysMenuController {
     @ApiOperation("删除菜单")
     @DeleteMapping("/remove/{id}")
     public Result delete(@PathVariable Long id){
-        boolean isSuccess = sysMenuService.removeById(id);
+        boolean isSuccess = sysMenuService.removeMenuById(id);
         if (isSuccess){
             return Result.ok();
         }else{
-            return Result.fail();
+            return Result.fail().message("该菜单无法删除");
         }
     }
 

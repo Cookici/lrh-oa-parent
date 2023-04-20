@@ -14,8 +14,6 @@ e
 5model/src/main/java/com/lrh/model/system/SysDept.java,c\e\cedc0cfbf1dc4d2de32033c16b2eddba911612e5
 i
 9model/src/main/java/com/lrh/model/system/SysLoginLog.java,9\5\955cd6310f6bd8030682406e79d1687950046e8a
-e
-5model/src/main/java/com/lrh/model/system/SysMenu.java,b\e\beab6aa0969418241dc17f87686d7edd3676a098
 h
 8model/src/main/java/com/lrh/model/system/SysOperLog.java,2\1\21bfaad3b9ead203fa2822eb38e5847b61ba2364
 e

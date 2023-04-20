@@ -1,6 +1,7 @@
 package com.lrh.auth.service.impl;
 
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.lrh.auth.mapper.SysMenuMapper;
 import com.lrh.auth.service.SysMenuService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
@@ -30,5 +31,19 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
         List<SysMenu> returnList = MenuHelper.buildTree(sysMenuList);
 
         return returnList;
+    }
+
+    @Override
+    public boolean removeMenuById(Long id) {
+        //判断当前菜单是否有下一层菜单  先搜索所有菜单 如果parenId等于id 证明该id的菜单有子菜单
+        LambdaQueryWrapper<SysMenu> lambdaQueryWrapper = new LambdaQueryWrapper<>();
+        lambdaQueryWrapper.eq(SysMenu::getParentId,id);
+        Integer count = baseMapper.selectCount(lambdaQueryWrapper);
+        if(count > 0){
+            return false;
+        }else{
+            baseMapper.deleteById(id);
+            return true;
+        }
     }
 }

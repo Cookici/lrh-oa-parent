@@ -21,4 +21,10 @@ public interface SysMenuService extends IService<SysMenu> {
      * @return
      */
     List<SysMenu> findNodes();
+
+    /**
+     * 没有子目录才删除
+     * @param id
+     */
+    boolean removeMenuById(Long id);
 }
