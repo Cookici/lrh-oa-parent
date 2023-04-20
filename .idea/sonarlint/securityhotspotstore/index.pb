@@ -90,10 +90,6 @@ f
 6model/src/main/java/com/lrh/model/base/BaseEntity.java,6\e\6e24442f092894d9480a7cd313f5422cff223587
 b
 2service-oa/src/test/java/com/lrh/code/CodeGet.java,f\5\f54b93fbaa4b65c3191f91bd8cdec3137976ed5e
-w
-Gservice-oa/src/main/java/com/lrh/auth/controller/SysRoleController.java,8\b\8bad973d11ff608ccad14633fb87ee01f2f9aa85
-w
-Gservice-oa/src/main/java/com/lrh/auth/controller/SysUserController.java,d\0\d0ec8fce8df5f3809112c741c1ce71fdee8c0b5e
 s
 Cservice-oa/src/main/java/com/lrh/auth/mapper/SysUserRoleMapper.java,9\e\9e5f0b0170db65403d4eb891efc9d9184a6f94b7
 o
