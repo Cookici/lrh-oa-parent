@@ -4,7 +4,6 @@ package com.lrh.auth.controller;
 import com.lrh.auth.service.SysMenuService;
 import com.lrh.common.result.Result;
 import com.lrh.model.system.SysMenu;
-import com.lrh.vo.system.AssginMenuVo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,23 +27,9 @@ public class SysMenuController {
     @Autowired
     private SysMenuService sysMenuService;
 
-    @ApiOperation("查询所有菜单和角色分配的菜单")
-    @GetMapping("/toAssign/{roleId}")
-    public Result toAssign(@PathVariable Long roleId) {
-        List<SysMenu> list = sysMenuService.findMenuRoleId(roleId);
-        return Result.ok(list);
-    }
-
-    @ApiOperation("角色分配菜单")
-    @PostMapping("/doAssign")
-    public Result doAssign(@RequestBody AssginMenuVo assginMenuVo) {
-        sysMenuService.doAssign(assginMenuVo);
-        return Result.ok();
-    }
-
     @ApiOperation("菜单列表")
     @GetMapping("/findNodes")
-    public Result findNodes() {
+    public Result findNodes(){
         List<SysMenu> list = sysMenuService.findNodes();
         return Result.ok(list);
     }
@@ -52,33 +37,33 @@ public class SysMenuController {
 
     @ApiOperation("新增菜单")
     @PostMapping("/save")
-    public Result sava(@RequestBody SysMenu sysMenu) {
+    public Result sava(@RequestBody SysMenu sysMenu){
         boolean isSuccess = sysMenuService.save(sysMenu);
-        if (isSuccess) {
+        if (isSuccess){
             return Result.ok();
-        } else {
+        }else{
             return Result.fail();
         }
     }
 
     @ApiOperation("修改菜单")
     @PutMapping("/update")
-    public Result update(@RequestBody SysMenu sysMenu) {
+    public Result update(@RequestBody SysMenu sysMenu){
         boolean isSuccess = sysMenuService.updateById(sysMenu);
-        if (isSuccess) {
+        if (isSuccess){
             return Result.ok();
-        } else {
+        }else{
             return Result.fail();
         }
     }
 
     @ApiOperation("删除菜单")
     @DeleteMapping("/remove/{id}")
-    public Result delete(@PathVariable Long id) {
+    public Result delete(@PathVariable Long id){
         boolean isSuccess = sysMenuService.removeMenuById(id);
-        if (isSuccess) {
+        if (isSuccess){
             return Result.ok();
-        } else {
+        }else{
             return Result.fail().message("该菜单无法删除");
         }
     }
