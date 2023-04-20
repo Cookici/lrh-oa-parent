@@ -44,7 +44,7 @@ public class SysUserController {
 
     //用户条件分页查询
     @ApiOperation("用户条件分页查询")
-    @GetMapping("{page}/{limit}")
+    @GetMapping("/{page}/{limit}")
     public Result index(@PathVariable Long page,
                         @PathVariable Long limit,
                         SysUserQueryVo sysUserQueryVo) {
@@ -77,14 +77,14 @@ public class SysUserController {
     }
 
     @ApiOperation(value = "获取用户")
-    @GetMapping("get/{id}")
+    @GetMapping("/get/{id}")
     public Result get(@PathVariable Long id) {
         SysUser user = sysUserService.getById(id);
         return Result.ok(user);
     }
 
     @ApiOperation(value = "保存用户")
-    @PostMapping("save")
+    @PostMapping("/save")
     public Result save(@RequestBody SysUser user) {
         /*//密码进行加密，使用MD5
         String passwordMD5 = MD5.encrypt(user.getPassword());
@@ -95,14 +95,14 @@ public class SysUserController {
     }
 
     @ApiOperation(value = "更新用户")
-    @PutMapping("update")
+    @PutMapping("/update")
     public Result updateById(@RequestBody SysUser user) {
         sysUserService.updateById(user);
         return Result.ok();
     }
 
     @ApiOperation(value = "删除用户")
-    @DeleteMapping("remove/{id}")
+    @DeleteMapping("/remove/{id}")
     public Result remove(@PathVariable Long id) {
         sysUserService.removeById(id);
         return Result.ok();

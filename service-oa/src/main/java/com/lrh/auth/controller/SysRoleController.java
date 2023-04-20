@@ -65,7 +65,7 @@ public class SysRoleController {
 
 
     @ApiOperation("条件分页查询")
-    @GetMapping("{page}/{limit}")       //page:当前页 limit:每页显示记录数 sysRoleQueryVo:条件对象
+    @GetMapping("/{page}/{limit}")       //page:当前页 limit:每页显示记录数 sysRoleQueryVo:条件对象
     public Result pageQueryRole(
             @PathVariable Long page,
             @PathVariable Long limit,
