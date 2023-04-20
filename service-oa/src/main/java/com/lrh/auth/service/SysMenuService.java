@@ -34,7 +34,7 @@ public interface SysMenuService extends IService<SysMenu> {
      * @param roleId
      * @return
      */
-    List<SysMenu> findMenuRoleId(Long roleId);
+    List<SysMenu> findMenuByRoleId(Long roleId);
 
     /**
      * 角色分配菜单
@@ -42,4 +42,5 @@ public interface SysMenuService extends IService<SysMenu> {
      * @return
      */
     void doAssign(AssginMenuVo assginMenuVo);
+
 }
