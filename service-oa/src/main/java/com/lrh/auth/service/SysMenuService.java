@@ -4,6 +4,7 @@ package com.lrh.auth.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.lrh.model.system.SysMenu;
 import com.lrh.vo.system.AssginMenuVo;
+import com.lrh.vo.system.RouterVo;
 
 import java.util.List;
 
@@ -27,7 +28,7 @@ public interface SysMenuService extends IService<SysMenu> {
      * 没有子目录才删除
      * @param id
      */
-    boolean removeMenuById(Long id);
+    void removeMenuById(Long id);
 
     /**
      * 查询所有菜单和角色分配的菜单
@@ -43,4 +44,17 @@ public interface SysMenuService extends IService<SysMenu> {
      */
     void doAssign(AssginMenuVo assginMenuVo);
 
+    /**
+     * 根据用户id获取用户可以操作的菜单列表（菜单）
+     * @param userId
+     * @return
+     */
+    List<RouterVo> findUserMenuListByUserId(Long userId);
+
+    /**
+     * 根据用户id获取用户可以操作的按钮列表（按钮）
+     * @param userId
+     * @return
+     */
+    List<String> findUserPermsByUserId(Long userId);
 }

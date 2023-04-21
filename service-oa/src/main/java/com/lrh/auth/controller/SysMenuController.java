@@ -46,7 +46,7 @@ public class SysMenuController {
 
     @ApiOperation("菜单列表")
     @GetMapping("/findNodes")
-    public Result findNodes(){
+    public Result findNodes() {
         List<SysMenu> list = sysMenuService.findNodes();
         return Result.ok(list);
     }
@@ -54,35 +54,31 @@ public class SysMenuController {
 
     @ApiOperation("新增菜单")
     @PostMapping("/save")
-    public Result sava(@RequestBody SysMenu sysMenu){
+    public Result sava(@RequestBody SysMenu sysMenu) {
         boolean isSuccess = sysMenuService.save(sysMenu);
-        if (isSuccess){
+        if (isSuccess) {
             return Result.ok();
-        }else{
+        } else {
             return Result.fail();
         }
     }
 
     @ApiOperation("修改菜单")
     @PutMapping("/update")
-    public Result update(@RequestBody SysMenu sysMenu){
+    public Result update(@RequestBody SysMenu sysMenu) {
         boolean isSuccess = sysMenuService.updateById(sysMenu);
-        if (isSuccess){
+        if (isSuccess) {
             return Result.ok();
-        }else{
+        } else {
             return Result.fail();
         }
     }
 
     @ApiOperation("删除菜单")
     @DeleteMapping("/remove/{id}")
-    public Result delete(@PathVariable Long id){
-        boolean isSuccess = sysMenuService.removeMenuById(id);
-        if (isSuccess){
-            return Result.ok();
-        }else{
-            return Result.fail().message("该菜单无法删除");
-        }
+    public Result delete(@PathVariable Long id) {
+        sysMenuService.removeMenuById(id);
+        return Result.ok();
     }
 
 

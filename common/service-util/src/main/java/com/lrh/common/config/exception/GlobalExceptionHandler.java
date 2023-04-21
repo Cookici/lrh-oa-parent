@@ -24,21 +24,7 @@ public class GlobalExceptionHandler {
         return Result.fail().message("执行全局异常处理");
     }
 
-    //特定异常处理
-    @ExceptionHandler(ArithmeticException.class)
-    @ResponseBody
-    public Result error(ArithmeticException e){
-        e.printStackTrace();
-        return Result.fail().message("除0处理");
-    }
 
-    //空指针异常处理
-    @ExceptionHandler(NullPointerException.class)
-    @ResponseBody
-    public Result error(NullPointerException e){
-        e.printStackTrace();
-        return Result.ok().message("空指针异常错误");
-    }
 
     //自定义异常处理
     @ExceptionHandler(CustomException.class)

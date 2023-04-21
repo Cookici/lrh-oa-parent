@@ -3,6 +3,7 @@ package com.lrh.auth.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.lrh.model.system.SysUserRole;
+import org.apache.ibatis.annotations.Mapper;
 
 /**
  * <p>
@@ -12,6 +13,7 @@ import com.lrh.model.system.SysUserRole;
  * @author lrh
  * @since 2023-04-18
  */
+@Mapper
 public interface SysUserRoleMapper extends BaseMapper<SysUserRole> {
 
 }

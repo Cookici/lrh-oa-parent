@@ -4,6 +4,7 @@ package com.lrh.auth.controller;
 import com.lrh.auth.service.SysUserService;
 import com.lrh.common.result.Result;
 // import com.lrh.common.utils.MD5;
+import com.lrh.common.utils.MD5;
 import com.lrh.model.system.SysUser;
 import com.lrh.vo.system.AssginRoleVo;
 import com.lrh.vo.system.SysUserQueryVo;
@@ -86,9 +87,10 @@ public class SysUserController {
     @ApiOperation(value = "保存用户")
     @PostMapping("/save")
     public Result save(@RequestBody SysUser user) {
-        /*//密码进行加密，使用MD5
+
+        //密码进行加密，使用MD5
         String passwordMD5 = MD5.encrypt(user.getPassword());
-        user.setPassword(passwordMD5);*/
+        user.setPassword(passwordMD5);
 
         sysUserService.save(user);
         return Result.ok();
