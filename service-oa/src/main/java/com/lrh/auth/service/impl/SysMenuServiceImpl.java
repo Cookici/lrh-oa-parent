@@ -58,7 +58,7 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
 
     @Override
     public List<SysMenu> findMenuByRoleId(Long roleId) {
-        //1.查询所有菜单- 添加条件 status=1
+        //1.查询所有菜单 添加条件 status=1
         LambdaQueryWrapper<SysMenu> wrapperSysMenu = new LambdaQueryWrapper<>();
         wrapperSysMenu.eq(SysMenu::getStatus,1);
         List<SysMenu> allSysMenuList = baseMapper.selectList(wrapperSysMenu);
