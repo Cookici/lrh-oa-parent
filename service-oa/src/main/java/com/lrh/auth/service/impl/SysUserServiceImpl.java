@@ -6,10 +6,11 @@ import com.lrh.auth.mapper.SysUserMapper;
 import com.lrh.auth.service.SysUserService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.lrh.model.system.SysUser;
+import com.lrh.security.custom.CustomUser;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import java.util.Collections;
 
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * <p>
@@ -32,4 +33,13 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
         //3.调用方法进行修改
         baseMapper.updateById(sysUser);
     }
+
+    @Override
+    public SysUser getUerByUserName(String username) {
+        LambdaQueryWrapper<SysUser> lambdaQueryWrapper = new LambdaQueryWrapper<>();
+        lambdaQueryWrapper.eq(SysUser::getUsername,username);
+        SysUser sysUser = baseMapper.selectOne(lambdaQueryWrapper);
+        return sysUser;
+    }
+
 }
