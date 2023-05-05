@@ -1,6 +1,7 @@
 server:
   port: 8800
 
+
 spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
@@ -11,6 +12,19 @@ spring:
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
+
+  redis:
+    host: 192.168.29.123
+    port: 6379
+    database: 0
+    timeout: 1800000
+    password: 20030706
+    jedis:
+      pool:
+        max-active: 20
+        max-wait: -1
+        max-idle: 5
+        min-idle: 0
 
 
 mybatis-plus:

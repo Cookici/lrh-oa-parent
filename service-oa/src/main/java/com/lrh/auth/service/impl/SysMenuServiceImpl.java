@@ -132,7 +132,6 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
         //构建成框架要求的路由结构 把SysMenu变成RouterVo
         List<RouterVo> routerList = this.buildRouter(sysMenuTreeList);
 
-
         return routerList;
     }
 

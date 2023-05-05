@@ -1,0 +1,10 @@
+
+|
+java:S1488)"_Immediately return this expression instead of assigning it to the temporary variable "sysUser".(‡ËË±8² §èú0
+a
+java:S1128	"?Remove this unused import 'com.lrh.security.custom.CustomUser'.(İğÁˆşÿÿÿÿ8ŠŒ¨èú0
+†
+java:S1128
+"dRemove this unused import 'org.springframework.security.core.userdetails.UsernameNotFoundException'.(Í£Ö¶ùÿÿÿÿ8ŠŒ¨èú0
+T
+java:S1128"2Remove this unused import 'java.util.Collections'.(¢³ïÓşÿÿÿÿ8ŠŒ¨èú0
