@@ -39,6 +39,7 @@ public class SysRoleController {
     private SysRoleService sysRoleService;
 
     //1.查询所有角色和当前对象所属角色
+    @PreAuthorize("hasAuthority('bnt.sysRole.list')")
     @ApiOperation("获取角色")
     @GetMapping("/toAssign/{userId}")
     public Result toAssign(@PathVariable Long userId){
@@ -47,6 +48,7 @@ public class SysRoleController {
     }
 
     //2.为用户分配角色
+    @PreAuthorize("hasAuthority('bnt.sysRole.assignRole')")
     @ApiOperation("为用户分配角色")
     @PostMapping("/doAssign")
     public Result doAssign(@RequestBody AssginRoleVo assginRoleVo){
@@ -55,6 +57,7 @@ public class SysRoleController {
     }
 
 
+    @PreAuthorize("hasAuthority('bnt.sysRole.list')")
     @ApiOperation("查询所有角色")
     @GetMapping("/findAll")
     public Result getAll(){

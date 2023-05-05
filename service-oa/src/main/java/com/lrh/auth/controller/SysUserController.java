@@ -14,6 +14,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
@@ -35,6 +36,7 @@ public class SysUserController {
 
 
     //更新状态
+    @PreAuthorize("hasAuthority('bnt.sysUser.update')")
     @ApiOperation("更新状态")
     @GetMapping("/updateStatus/{id}/{status}")
     public Result updateStatus(@PathVariable Long id,@PathVariable Integer status){
@@ -43,7 +45,9 @@ public class SysUserController {
     }
 
 
+
     //用户条件分页查询
+    @PreAuthorize("hasAuthority('bnt.sysUser.list')")
     @ApiOperation("用户条件分页查询")
     @GetMapping("/{page}/{limit}")
     public Result index(@PathVariable Long page,
@@ -77,6 +81,7 @@ public class SysUserController {
         return Result.ok(pageModel);
     }
 
+    @PreAuthorize("hasAuthority('bnt.sysUser.list')")
     @ApiOperation(value = "获取用户")
     @GetMapping("/get/{id}")
     public Result get(@PathVariable Long id) {
@@ -84,6 +89,8 @@ public class SysUserController {
         return Result.ok(user);
     }
 
+
+    @PreAuthorize("hasAuthority('bnt.sysUser.add')")
     @ApiOperation(value = "保存用户")
     @PostMapping("/save")
     public Result save(@RequestBody SysUser user) {
@@ -96,6 +103,8 @@ public class SysUserController {
         return Result.ok();
     }
 
+
+    @PreAuthorize("hasAuthority('bnt.sysUser.update')")
     @ApiOperation(value = "更新用户")
     @PutMapping("/update")
     public Result updateById(@RequestBody SysUser user) {
@@ -103,6 +112,7 @@ public class SysUserController {
         return Result.ok();
     }
 
+    @PreAuthorize("hasAuthority('bnt.sysUser.remove')")
     @ApiOperation(value = "删除用户")
     @DeleteMapping("/remove/{id}")
     public Result remove(@PathVariable Long id) {
