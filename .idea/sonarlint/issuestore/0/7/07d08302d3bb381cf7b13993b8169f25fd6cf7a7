@@ -1,0 +1,19 @@
+
+„
+java:S1488-"bImmediately return this expression instead of assigning it to the temporary variable "returnList".(³¿Êýÿÿÿÿ8£‹Í¢ú0
+€
+java:S1488X"cImmediately return this expression instead of assigning it to the temporary variable "sysMenuList".(‚ûÁ8¤‹Í¢ú0
+
+java:S1488…"bImmediately return this expression instead of assigning it to the temporary variable "routerList".(õÏG8å›€¬þ0
+
+java:S1488Ó"aImmediately return this expression instead of assigning it to the temporary variable "permsList".( ¸ÃÕ8¤‹Í¢ú0
+`
+java:S1612L"CReplace this lambda with method reference 'SysRoleMenu::getMenuId'.(ëÙé¾8×‹Í¢ú0
+d
+java:S1126P"BReplace this if-then-else statement by a single method invocation.(ºŽ›úÿÿÿÿ8Ø‹Í¢ú0
+\
+java:S1155©">Use isEmpty() to check whether the collection is empty or not.(–ù¸‘8à‹Í¢ú0
+D
+java:S1075¼"&Remove this hard-coded path-delimiter.(ºÙ‰ž8á‹Í¢ú0
+[
+java:S1612Õ">Replace this lambda with method reference 'SysMenu::getPerms'.(¼‡»_8ä‹Í¢ú0
